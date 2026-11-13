@@ -1,3 +1,19 @@
+/*
+ * Ejercicio 24 - Camino minimo con pesos en vertices y en aristas
+ * (AtCoder ABC362 D - Shortest Path 3)
+ *
+ * Problema: grafo no dirigido y conexo con n vertices y m aristas. Cada
+ * vertice i tiene peso A_i y cada arista tiene peso w. El costo de un camino
+ * es la suma de los pesos de todos sus vertices y aristas. Para cada vertice
+ * i = 2..n imprimir el costo minimo de un camino desde el vertice 1 hasta i.
+ *
+ * Idea: se pasa el peso de los vertices a las aristas: al salir de u por la
+ * arista (u, v, w) se paga A_u + w. Asi se corre un Dijkstra normal desde 1
+ * y al final se suma A_i del vertice destino (del cual nunca se "sale").
+ *
+ * Complejidad: O((n + m) log n).
+ */
+
 #include <bits/stdc++.h>
 using namespace std;
 #define ll long long

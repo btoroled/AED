@@ -1,3 +1,19 @@
+/*
+ * Ejercicio 25 - Cantidad de caminos minimos
+ * (LeetCode 1976 - Number of Ways to Arrive at Destination)
+ *
+ * Problema: hay n intersecciones (0..n-1) y calles bidireccionales con un
+ * tiempo de viaje. Contar de cuantas formas se puede ir de 0 a n-1 usando el
+ * menor tiempo posible. La respuesta se da modulo 1e9+7.
+ *
+ * Idea: Dijkstra (version O(n^2), sin cola de prioridad) llevando ademas
+ * cnt[v] = cantidad de caminos minimos hasta v:
+ *   - si se encuentra un camino mas corto a v, cnt[v] = cnt[u]
+ *   - si se encuentra otro camino con la misma distancia, cnt[v] += cnt[u]
+ *
+ * Complejidad: O(n^2 + m).
+ */
+
 #include <bits/stdc++.h>
 
 using namespace std;

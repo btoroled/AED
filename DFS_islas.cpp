@@ -1,4 +1,16 @@
-// DFS isla
+/*
+ * DFS_islas - Contar islas en una grilla
+ *
+ * Problema: se da una grilla de n x m donde '.' es agua y cualquier otro
+ * caracter es tierra. Una isla es un grupo de celdas de tierra conectadas en
+ * 4 direcciones (arriba, abajo, izquierda, derecha). Imprimir la cantidad de
+ * islas y la cantidad de celdas de la isla mas grande.
+ *
+ * Idea: se recorre la grilla y cada vez que se encuentra una celda de tierra
+ * no visitada se lanza una DFS que marca toda su isla y devuelve su tamanio.
+ *
+ * Complejidad: O(n * m).
+ */
 
 #include <bits/stdc++.h>
 using namespace std;

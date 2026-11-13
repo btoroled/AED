@@ -1,3 +1,21 @@
+/*
+ * Ejercicio 15 - Componentes ciclicas
+ * (Codeforces 977E - Cyclic Components)
+ *
+ * Problema: dado un grafo no dirigido con n vertices y m aristas, contar
+ * cuantas componentes conexas son un ciclo simple (todos sus vertices forman
+ * un unico ciclo, sin aristas extra).
+ *
+ * Entrada: n m, y luego m aristas u v (1-indexadas).
+ * Salida: cantidad de componentes que son ciclos.
+ *
+ * Idea: una componente es un ciclo si y solo si todos sus vertices tienen
+ * grado exactamente 2. Se recorre cada componente con DFS y se verifica que
+ * todos sus vertices cumplan deg == 2.
+ *
+ * Complejidad: O(n + m).
+ */
+
 #include <bits/stdc++.h>
 using namespace std;
 

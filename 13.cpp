@@ -1,3 +1,20 @@
+/*
+ * Ejercicio 13 - Operaciones para conectar una red
+ * (LeetCode 1319 - Number of Operations to Make Network Connected)
+ *
+ * Problema: hay n computadoras (0..n-1) unidas por cables (edges). En cada
+ * operacion se puede quitar un cable entre dos computadoras y ponerlo entre
+ * otras dos. Devolver el minimo numero de operaciones para que toda la red
+ * quede conectada, o -1 si no es posible.
+ *
+ * Idea: con menos de n-1 cables es imposible conectar n nodos -> -1.
+ * Si alcanzan los cables, se cuentan las componentes conexas con DFS; cada
+ * componente extra necesita un cable para unirse al resto, asi que la
+ * respuesta es (componentes - 1).
+ *
+ * Complejidad: O(n + m).
+ */
+
 #include <bits/stdc++.h>
 using namespace std;
 class Solution {

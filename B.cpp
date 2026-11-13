@@ -1,3 +1,22 @@
+/*
+ * Ejercicio B - Camino minimo en un grafo completo con pesos generados
+ *
+ * Problema: hay n nodos (1..n) y entre cada par x != y existe una arista con
+ * peso ((x+y)*p + x*y*q) mod m + 1. Encontrar la distancia minima de 1 a n
+ * y, entre todos los caminos con esa distancia, la menor cantidad de
+ * aristas. Si n == 1 la respuesta es "0 0".
+ *
+ * Entrada: n p q m.
+ * Salida: distancia_minima cantidad_minima_de_aristas.
+ *
+ * Idea: Dijkstra O(n^2). Como el grafo es completo no se guardan las
+ * aristas: el peso se calcula al vuelo con la formula. Ademas de d[v] se
+ * guarda l[v], el minimo numero de aristas para llegar a v con distancia
+ * d[v]; ante un empate en la distancia se queda con el menor l.
+ *
+ * Complejidad: O(n^2).
+ */
+
 #include <bits/stdc++.h>
 using namespace std;
 #define ll long long
