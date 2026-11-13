@@ -1,3 +1,20 @@
+/*
+ * Ejercicio 20 - Maximo de aristas manteniendo el grafo bipartito
+ * (Codeforces 862B - Mahmoud and Ehab and the bipartiteness)
+ *
+ * Problema: se da un arbol de n nodos. Se quiere agregar la mayor cantidad
+ * de aristas posible de forma que el grafo siga siendo bipartito y simple
+ * (sin lazos ni aristas repetidas). Imprimir cuantas aristas se pueden
+ * agregar.
+ *
+ * Idea: un arbol siempre es bipartito. Se colorea con DFS (colores 0 y 1) y
+ * se cuentan x nodos de un color e y del otro. Un grafo bipartito con esos
+ * dos lados tiene como maximo x*y aristas; como el arbol ya usa n-1, la
+ * respuesta es x*y - (n-1). Se usa long long porque x*y puede ser ~10^10.
+ *
+ * Complejidad: O(n).
+ */
+
 #include <bits/stdc++.h>
 using namespace std;
 #define ll long long

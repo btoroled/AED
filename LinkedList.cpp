@@ -1,20 +1,14 @@
 #include <iostream>
-
 using namespace std;
 
 template <typename data_type>
 struct LinkedListNode{
     data_type value;
     LinkedListNode<data_type>* next;
-
     LinkedListNode (){
         next = nullptr;
     }
-
-    LinkedListNode(data_type v) : value(v) {
-        next = nullptr;
-    }
-    LinkedListNode(data_type v, LinkedListNode<data_type>* n) : value(v), next(n){
+    LinkedListNode(data_type v, LinkedListNode<data_type>* n = nullptr) : value(v), next(n){
     }
 };
 
@@ -22,6 +16,7 @@ template <typename data_type>
 struct LinkedList{
     LinkedListNode<data_type>* head;
     LinkedListNode<data_type>* tail;
+
     LinkedList(){
         head = tail = nullptr;
     }
@@ -33,6 +28,7 @@ struct LinkedList{
         }
         head = new_node;
     }
+
     void push_back(data_type value){
         if(tail == nullptr){
             head = tail = new LinkedListNode<data_type>(value);
@@ -41,6 +37,14 @@ struct LinkedList{
             tail -> next = new LinkedListNode<data_type>(value);
             tail = tail ->next;
         }
+    }
+
+    void insert(LinkedListNode<data_type>* node, data_type value){
+        LinkedListNode<data_type>* new_node = new LinkedListNode<data_type>(value, node -> next);
+        if(node == tail){
+            tail = new_node;
+        }
+        node -> next = new_node;
     }
 
     void insert(int k, data_type value){
@@ -52,14 +56,6 @@ struct LinkedList{
             }
             insert(current, value);
         }
-    }
-
-    void insert(LinkedListNode<data_type>* node, data_type value){
-        LinkedListNode<data_type>* new_node = new LinkedListNode<data_type>(value, node -> next);
-        if(node == tail){
-            tail = new_node;
-        }
-        node -> next = new_node;
     }
 
     void pop_front(){
@@ -79,6 +75,7 @@ struct LinkedList{
             delete current;
         }
     }
+
     void erase(int k){
         if(k==0) pop_front();
         else{
@@ -103,14 +100,7 @@ struct LinkedList{
 int main(){
     LinkedList<int> L;
 
-    L.insert(0, 1);
-    L.insert(1, 2);
-    L.insert(2, 3);
-    L.push_front(4);
-    L.push_back(5);
-    L.print();
-    L.pop_front();
-    L.print();
+    
 
     return 0;
 }

@@ -1,3 +1,16 @@
+/*
+ * Ejercicio C - Diametro de un arbol con pesos
+ *
+ * Problema: se da un arbol de n nodos con n-1 aristas "u v w" (w = peso, no
+ * negativo). Imprimir el diametro: la mayor distancia entre dos nodos.
+ *
+ * Idea (dos DFS): desde cualquier nodo (el 0) se busca el nodo s mas lejano;
+ * s siempre es un extremo de algun diametro. Luego se hace otra DFS desde s
+ * y la mayor distancia encontrada es el diametro.
+ *
+ * Complejidad: O(n).
+ */
+
 #include <bits/stdc++.h>
 using namespace std;
 #define ll long long
